@@ -58,3 +58,8 @@ plot(dt); title("2010 totalN deposition")
 ## Contributing
 
 Contributions welcome in the form of issues and pull requests.
+
+## Prior Art
+
+This package uses the `externalrdata` [package
+template](https://github.com/jsta/externalrdata)
