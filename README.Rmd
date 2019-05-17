@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+
+## nadp
+
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active) [![Travis-CI Build Status](https://travis-ci.org/jsta/nadp.svg?branch=master)](https://travis-ci.org/jsta/nadp) 
+
+This package is an R interface to faciliate access to the National Atmospheric Deposition Program map data.
+ 
+## Installation
+
+```{r eval=FALSE}
+# install devtools if not found
+# install.packages(devtools)
+devtools::install_github("jsta/nadp")
+```
+
+## Usage
+
+```{r }
+library(nadp)
+library(raster)
+```
+
+### Download external data and store in file system
+
+```{r message=FALSE, eval=FALSE}
+nadp_get(years = 2010, products = "totalN")
+```
+
+### List files
+
+```{r eval=FALSE}
+nadp_ls()
+```
+
+### Load data
+
+```{r }
+dt <- nadp_load(years = 2010, products = "totalN")
+names(dt)
+class(dt)
+plot(dt); title("2010 totalN deposition")
+```
+
+## Contributing
+
+Contributions welcome in the form of issues and pull requests.
